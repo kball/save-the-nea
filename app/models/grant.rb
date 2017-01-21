@@ -15,7 +15,9 @@ class Grant < ApplicationRecord
     grant.grantee = row[2]
     grant.organization_popular_name = row[3]
     grant.sponsored_organization = row[4]
+    return unless row[6]
     grant.state = State.find_by_abbrev(row[6].strip)
+    return unless grant.state
     grant.city = grant.state.cities.where(name: row[5].strip).first || grant.state.cities.create(name: row[5].strip)
     grant.zip = row[7]
     grant.congressional_district = grant.state.congressional_districts.where(number: row[8]).first || grant.state.congressional_districts.create(number: row[8])
@@ -25,7 +27,9 @@ class Grant < ApplicationRecord
     grant.intended_outcome = row[12]
     grant.category = Category.where(name: row[13].strip).first || Category.create(name: row[13].strip)
     grant.nea_discipline = NeaDiscipline.where(name: row[14].strip).first || NeaDiscipline.create(name: row[14].strip)
-    grant.project_discipline = ProjectDiscipline.where(name: row[15].strip).first || ProjectDiscipline.create(name: row[15].strip)
+    if row[15]
+      grant.project_discipline = ProjectDiscipline.where(name: row[15].strip).first || ProjectDiscipline.create(name: row[15].strip)
+    end
     grant.project_description = row[16]
     grant.save
   end
