@@ -52,6 +52,11 @@ ActiveRecord::Schema.define(version: 20170121052447) do
     t.text     "project_description"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["city_id", "year"], name: "index_grants_on_city_id_and_year"
+    t.index ["congressional_district_id", "year"], name: "index_grants_on_congressional_district_id_and_year"
+    t.index ["number"], name: "index_grants_on_number"
+    t.index ["state_id", "year"], name: "index_grants_on_state_id_and_year"
+    t.index ["zip", "year"], name: "index_grants_on_zip_and_year"
   end
 
   create_table "nea_disciplines", force: :cascade do |t|

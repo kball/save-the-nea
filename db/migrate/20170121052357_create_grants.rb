@@ -10,7 +10,7 @@ class CreateGrants < ActiveRecord::Migration[5.0]
       t.integer :state_id
       t.string :zip
       t.integer :congressional_district_id
-      t.decimal :amount
+      t.decimal :amount, :precision => 8, :scale => 2
       t.date :start_date
       t.date :end_date
       t.text :intended_outcome
@@ -21,5 +21,10 @@ class CreateGrants < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :grants, :number
+    add_index :grants, [:zip, :year]
+    add_index :grants, [:city_id, :year]
+    add_index :grants, [:state_id, :year]
+    add_index :grants, [:congressional_district_id, :year]
   end
 end
