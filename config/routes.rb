@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   #
   get "/:state_slug/:congressional_district_number" => "congressional_districts#show"
 
+  get "/zip" => "zipcodes#search"
+
+  root to: "zipcodes#index"
+
 end
