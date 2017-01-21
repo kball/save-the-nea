@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The core idea of this app is to make it easy for anyone to find how the NEA has benefitted their area and then call their congressperson.
 
-Things you may want to cover:
+Core flow: enter zipcode, get taken to page highlighting your congressional district and projects the NEA supported in it.
 
-* Ruby version
+The congressional district page should show your congressperson's name, contact info, and suggest a script for calling them.
 
-* System dependencies
 
-* Configuration
+## Help wanted!
 
-* Database creation
+This is getting wired up as quickly as possible, but I'd definitely love help. Here's some ideas of how you could jump in...
 
-* Database initialization
+  1. Backend: Pulling down congressperson info
+  2. A beautiful design
+  3. Frontend implementation
+  4. Figuring out interaction & virality (comment on the conversation you had, and share with your friends?)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ping me on twitter at @kbal11 to let me know if you're interested
