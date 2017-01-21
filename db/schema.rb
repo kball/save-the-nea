@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121052447) do
+ActiveRecord::Schema.define(version: 20170121214333) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20170121052447) do
     t.integer "state_id"
     t.integer "number"
     t.index ["state_id", "number"], name: "index_congressional_districts_on_state_id_and_number"
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "grants", force: :cascade do |t|
@@ -78,8 +90,10 @@ ActiveRecord::Schema.define(version: 20170121052447) do
     t.string   "abbrev"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
     t.index ["abbrev"], name: "index_states_on_abbrev"
     t.index ["name"], name: "index_states_on_name"
+    t.index ["slug"], name: "index_states_on_slug", unique: true
   end
 
 end
