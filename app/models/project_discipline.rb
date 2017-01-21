@@ -1,0 +1,2 @@
+class ProjectDiscipline < ApplicationRecord
+end

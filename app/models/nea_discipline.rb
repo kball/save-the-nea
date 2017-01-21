@@ -1,0 +1,2 @@
+class NeaDiscipline < ApplicationRecord
+end

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121051258) do
+ActiveRecord::Schema.define(version: 20170121052447) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text   "description"
+    t.index ["name"], name: "index_categories_on_name"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -18,6 +24,48 @@ ActiveRecord::Schema.define(version: 20170121051258) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "congressional_districts", force: :cascade do |t|
+    t.integer "state_id"
+    t.integer "number"
+    t.index ["state_id", "number"], name: "index_congressional_districts_on_state_id_and_number"
+  end
+
+  create_table "grants", force: :cascade do |t|
+    t.integer  "year"
+    t.string   "number"
+    t.string   "grantee"
+    t.string   "organization_popular_name"
+    t.string   "sponsored_organization"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.string   "zip"
+    t.integer  "congressional_district_id"
+    t.decimal  "amount"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "intended_outcome"
+    t.integer  "category_id"
+    t.integer  "nea_discipline_id"
+    t.integer  "project_discipline_id"
+    t.text     "project_description"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "nea_disciplines", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_nea_disciplines_on_name"
+  end
+
+  create_table "project_disciplines", force: :cascade do |t|
+    t.string "name"
+    t.text   "description"
+    t.index ["name"], name: "index_project_disciplines_on_name"
   end
 
   create_table "states", force: :cascade do |t|

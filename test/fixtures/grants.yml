@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  number: MyString
+  grantee: MyString
+  organization_popular_name: MyString
+  sponsored_organization: MyString
+  city_id: 1
+  state_id: 1
+  zip: MyString
+  congressional_district_id: 1
+  amount: 9.99
+  start_date: 2017-01-20
+  end_date: 2017-01-20
+  intended_outcome: MyText
+  category_id: 1
+  nea_discipline_id: 1
+  project_discipline_id: 1
+  project_description: MyText
+
+two:
+  year: 1
+  number: MyString
+  grantee: MyString
+  organization_popular_name: MyString
+  sponsored_organization: MyString
+  city_id: 1
+  state_id: 1
+  zip: MyString
+  congressional_district_id: 1
+  amount: 9.99
+  start_date: 2017-01-20
+  end_date: 2017-01-20
+  intended_outcome: MyText
+  category_id: 1
+  nea_discipline_id: 1
+  project_discipline_id: 1
+  project_description: MyText
