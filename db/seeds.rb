@@ -13,3 +13,6 @@ CSV.foreach("data/states.csv") do |row|
   state.abbrev = row[1]
   state.save
 end
+
+Zipcode.parse_file('data/all-zips.csv')
+Grant.parse_file('data/export.txt')

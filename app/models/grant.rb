@@ -3,6 +3,7 @@ class Grant < ApplicationRecord
   belongs_to :state
   belongs_to :city
   belongs_to :congressional_district
+  belongs_to :zipcode
   belongs_to :category
   belongs_to :nea_discipline
   belongs_to :project_discipline
@@ -19,7 +20,8 @@ class Grant < ApplicationRecord
     grant.state = State.find_by_abbrev(row[6].strip)
     return unless grant.state
     grant.city = grant.state.cities.where(name: row[5].strip).first || grant.state.cities.create(name: row[5].strip)
-    grant.zip = row[7]
+    grant.full_zip = row[7]
+    grant.zipcode = Zipcode.find_by_code(grant.full_zip.split('-').first)
     grant.congressional_district = grant.state.congressional_districts.where(number: row[8]).first || grant.state.congressional_districts.create(number: row[8])
     grant.amount = row[9].gsub(/[\$\,]/, '').to_f
     grant.start_date = Date.parse(row[10])

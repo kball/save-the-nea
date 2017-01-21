@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121214333) do
+ActiveRecord::Schema.define(version: 20170121225143) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170121214333) do
     t.string   "sponsored_organization"
     t.integer  "city_id"
     t.integer  "state_id"
-    t.string   "zip"
+    t.string   "full_zip"
     t.integer  "congressional_district_id"
     t.decimal  "amount"
     t.date     "start_date"
@@ -64,11 +64,12 @@ ActiveRecord::Schema.define(version: 20170121214333) do
     t.text     "project_description"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "zipcode_id"
     t.index ["city_id", "year"], name: "index_grants_on_city_id_and_year"
     t.index ["congressional_district_id", "year"], name: "index_grants_on_congressional_district_id_and_year"
+    t.index ["full_zip", "year"], name: "index_grants_on_full_zip_and_year"
     t.index ["number"], name: "index_grants_on_number"
     t.index ["state_id", "year"], name: "index_grants_on_state_id_and_year"
-    t.index ["zip", "year"], name: "index_grants_on_zip_and_year"
   end
 
   create_table "nea_disciplines", force: :cascade do |t|
@@ -94,6 +95,17 @@ ActiveRecord::Schema.define(version: 20170121214333) do
     t.index ["abbrev"], name: "index_states_on_abbrev"
     t.index ["name"], name: "index_states_on_name"
     t.index ["slug"], name: "index_states_on_slug", unique: true
+  end
+
+  create_table "zipcodes", force: :cascade do |t|
+    t.string   "code"
+    t.integer  "congressional_district_id"
+    t.integer  "state_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["code"], name: "index_zipcodes_on_code", unique: true
+    t.index ["congressional_district_id"], name: "index_zipcodes_on_congressional_district_id"
+    t.index ["state_id", "congressional_district_id"], name: "index_zipcodes_on_state_id_and_congressional_district_id"
   end
 
 end
