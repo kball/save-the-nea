@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170121225143) do
     t.string   "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["state_id"], name: "index_cities_on_state_id"
+    t.index ["state_id", "name"], name: "index_cities_on_state_id_and_name"
   end
 
   create_table "congressional_districts", force: :cascade do |t|
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170121225143) do
     t.integer  "state_id"
     t.string   "full_zip"
     t.integer  "congressional_district_id"
-    t.decimal  "amount"
+    t.decimal  "amount",                    precision: 8, scale: 2
     t.date     "start_date"
     t.date     "end_date"
     t.text     "intended_outcome"
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20170121225143) do
     t.integer  "nea_discipline_id"
     t.integer  "project_discipline_id"
     t.text     "project_description"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.integer  "zipcode_id"
     t.index ["city_id", "year"], name: "index_grants_on_city_id_and_year"
     t.index ["congressional_district_id", "year"], name: "index_grants_on_congressional_district_id_and_year"
