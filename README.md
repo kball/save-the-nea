@@ -6,6 +6,16 @@ Core flow: enter zipcode, get taken to page highlighting your congressional dist
 
 The congressional district page should show your congressperson's name, contact info, and suggest a script for calling them.
 
+## Getting setup
+
+```
+bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+
+NOTE:  Seeds will take a long time, they're parsing a lot of data.
 
 ## Help wanted!
 
