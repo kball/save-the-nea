@@ -79,9 +79,6 @@
         <mask id="mask-17" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="548" height="87" fill="white">
             <use xlink:href="#path-15"></use>
         </mask>
-        <text id="text-18" font-family="Nunito-Regular, Nunito" font-size="36" font-weight="normal" fill="#4A4A4A">
-            <tspan x="615.798" y="960">#savethearts</tspan>
-        </text>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-19">
             <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
@@ -138,10 +135,6 @@
                 <use filter="url(#filter-22)" xlink:href="#text-21"></use>
                 <use xlink:href="#text-21"></use>
             </g>
-            <text id="SAVE-THE-ARTS" font-family="Nunito-Regular, Nunito" font-size="48" font-weight="normal" fill="#FFFFFF">
-                <tspan x="132.896" y="81">SAVE</tspan>
-                <tspan x="125" y="122.056152" font-size="24" line-spacing="1">THE ARTS</tspan>
-            </text>
         </g>
     </g>
 </svg>

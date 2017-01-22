@@ -7,7 +7,8 @@
 
 .hero-photo {
   background-image: image-url("index/background.svg");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: top center;
   height: 100vh;
 }
@@ -80,5 +81,35 @@
   }
   &::placeholder {
     opacity: 1;
+  }
+}
+
+.hero-footer {
+  width: 100%;
+  min-height: 51px;
+  background-color: #afafaf;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.hero-footer-link {
+  color: #4a4a4a;
+}
+
+.hero-logo {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 48px;
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+  line-height: 1.1;
+  .the-arts {
+    display: block;
+    font-size: 24px;
+    position: relative;
+    left: -5px;
   }
 }
