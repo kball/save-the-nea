@@ -1,0 +1,59 @@
+// Place all the styles related to the zipcodes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.text-centered {
+  text-align: center;
+}
+
+.hero-photo {
+  background-image: image-url("index/background.svg");
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+}
+
+.opacity-layer {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  color: #333;
+}
+
+.zipcode-form-container {
+  position: absolute;
+  width: 50%;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.pre-hover, .post-hover {
+  color: #fff;
+}
+
+.post-hover {
+  display: none;
+}
+
+.zipcode-search {
+  padding: 40px;
+  margin: 30px 10px;
+  font-size: 24px;
+  width: 75%;
+  &::-webkit-input-placeholder {
+    opacity: 0.5;
+  }
+  &::-moz-placeholder {
+    opacity: 0.5;
+  }
+  &:-ms-input-placeholder {
+    opacity: 0.5;
+  }
+  &:-moz-placeholder {
+    opacity: 0.5;
+  }
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
