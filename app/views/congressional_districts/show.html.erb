@@ -1,3 +1,19 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="/">#SaveTheArts</a>
+  </div>
+  <div class="top-bar-right">
+    <form action="/zip" method="GET">
+      <ul class="menu">
+        <li><input type="search" name="code" value="<%= params[:zipcode] %>" placeholder="Zipcode"></li>
+        <li><button type="button" class="button">Find Zipcode</button></li>
+      </ul>
+    </form>
+  </div>
+</div>
+<div class="row columns">
+  <h1><%= @state.name %> CD <%= "%2d" % @congressional_district.number %></h1>
+</div>
 <div class="row">
   <div class="columns medium-8">
     <%= render @grants %>
