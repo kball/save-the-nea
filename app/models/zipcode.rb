@@ -12,7 +12,9 @@ class Zipcode < ApplicationRecord
       zip.congressional_district = zip.state.congressional_districts.detect do |cd|
         cd.number == row[2].to_i
       end
-      raise "couldn't find cd #{row[2]}" unless zip.congressional_district
+      unless zip.congressional_district
+        zip.congressional_district = zip.state.congressional_districts.create(number: row[2].to_i)
+      end
       zip.save
     end
   end
