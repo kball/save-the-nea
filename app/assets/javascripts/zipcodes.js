@@ -57,17 +57,14 @@ $(function() {
           var dist = opts.dist['Pointer2d'];
           if(dist > 300) {
             $opacityLayer.css({'opacity': 0});
-            $preHover.show();
-            $postHover.hide();
+            $preHover.css({'opacity': 1});
           } else if(dist > 30) {
             $opacityLayer.css({'opacity': (1 - (dist / 300))});
-            $preHover.show();
-            $postHover.hide();
+            $preHover.css({'opacity': dist/300});
             $heroPhoto.removeClass('show-placeholder');
           } else {
             $opacityLayer.css({'opacity': 1});
-            $preHover.hide();
-            $postHover.show();
+            $preHover.css({opacity: 0});
             $heroPhoto.addClass('show-placeholder');
           }
         }

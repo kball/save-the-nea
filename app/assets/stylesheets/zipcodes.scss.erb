@@ -34,11 +34,8 @@
   text-align: center;
 }
 
-.post-hover {
-  display: none;
-}
 
-.zipcode-search {
+.fake, .zipcode-search {
   padding: 30px 30px 30px 50px;
   margin-top: 30px;
   margin-left: auto;
@@ -67,6 +64,9 @@
   &::placeholder {
     opacity: 0;
   }
+}
+.fake {
+  visibility: hidden;
 }
 
 .hero-footer {
@@ -111,10 +111,7 @@
   }
   background-color: #afafaf;
   .pre-hover {
-    display: none !important;
-  }
-  .post-hover {
-    display: block !important;
+    opacity: 0 !important;
   }
 }
 .hero-photo.is-opaque, .hero-photo.show-placeholder {
@@ -136,4 +133,3 @@
     }
   }
 }
-
