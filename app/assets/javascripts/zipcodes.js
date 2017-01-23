@@ -36,14 +36,43 @@ var adjustHero = function() {
 };
 
 $(function() {
-  adjustHero();
-  $('.hero-footer').on('resizeme.zf.trigger', adjustHero);
+  if($('.hero-logo').is('*')) {
+    adjustHero();
+    $('.hero-footer').on('resizeme.zf.trigger', adjustHero);
+    var $input = $('.zipcode-search');
 
-  $('.zipcode-search').on('focus', function() {
-    $('.hero-photo').addClass('is-opaque');
-  });
+    $input.on('focus', function() {
+      $('.hero-photo').addClass('is-opaque');
+    }).on('blur', function() {
+      $('.hero-photo').removeClass('is-opaque');
+    });
 
-  $('.zipcode-search').on('blur', function() {
-    $('.hero-photo').removeClass('is-opaque');
-  });
+    var $heroPhoto = $('.hero-photo');
+    var $opacityLayer = $('.opacity-layer');
+    var $preHover = $('.pre-hover');
+    var $postHover = $('.post-hover');
+    ReactiveListener.add($input[0], {
+      'Pointer2d': [{
+        callback: function(opts) {
+          var dist = opts.dist['Pointer2d'];
+          if(dist > 300) {
+            $opacityLayer.css({'opacity': 0});
+            $preHover.show();
+            $postHover.hide();
+          } else if(dist > 30) {
+            $opacityLayer.css({'opacity': (1 - (dist / 300))});
+            $preHover.show();
+            $postHover.hide();
+            $heroPhoto.removeClass('show-placeholder');
+          } else {
+            $opacityLayer.css({'opacity': 1});
+            $preHover.hide();
+            $postHover.show();
+            $heroPhoto.addClass('show-placeholder');
+          }
+        }
+      }]
+    });
+    ReactiveListener.start();
+  }
 });
