@@ -3,13 +3,16 @@
   </div>
   <h1 id="logo" class="hero-logo">Save <span class='the-arts'>The Arts</span></h2>
   <div class="zipcode-form-container">
-    <h2 class="pre-hover">Imagine a world without art</h2>
+    <h2 class="pre-hover"><br/>Imagine a world without art</h2>
     <h2 class="post-hover">Find out what's disappearing in your<br/>neighborhood</h2>
     <%= form_tag "/zip", method: 'GET' do %>
       <%= text_field "code", @zipcode.code, placeholder: "Type your ZIP code", class: 'zipcode-search' %>
     <% end %>
   </div>
   <div data-resize class="hero-footer">
+    <div class="opacity-layer">
+      <a class='hero-footer-link' href="#">#savethearts</a>
+    </div>
     <a class='hero-footer-link' href="#">#savethearts</a>
   </div>
 </div>

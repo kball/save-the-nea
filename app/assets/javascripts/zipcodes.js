@@ -34,7 +34,16 @@ var adjustHero = function() {
   $('.hero-logo').css({left: logoOffset, 'font-size': logoFontSize + 'px'});
   $('.hero-logo .the-arts').css({'font-size': (logoFontSize / 2) + 'px'});
 };
+
 $(function() {
   adjustHero();
   $('.hero-footer').on('resizeme.zf.trigger', adjustHero);
+
+  $('.zipcode-search').on('focus', function() {
+    $('.hero-photo').addClass('is-opaque');
+  });
+
+  $('.zipcode-search').on('blur', function() {
+    $('.hero-photo').removeClass('is-opaque');
+  });
 });

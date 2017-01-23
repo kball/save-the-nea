@@ -18,19 +18,20 @@
   z-index: 1;
   height: 100%;
   width: 100%;
-  color: #333;
+  background-color: #333;
+  opacity: 0;
 }
-
 .zipcode-form-container {
   position: absolute;
-  max-width: 50%;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   z-index: 2;
 }
 .pre-hover, .post-hover {
   color: #fff;
+  text-align: center;
 }
 
 .post-hover {
@@ -40,9 +41,11 @@
 .zipcode-search {
   padding: 30px 30px 30px 50px;
   margin-top: 30px;
-  margin-left: 10%;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 24px;
-  width: 80%;
+  max-width: 400px;
+  width: 90%;
   
   background-image: image-url('index/search.svg');
   background-repeat: no-repeat;
@@ -68,19 +71,19 @@
 
 .zipcode-search:focus {
   &::-webkit-input-placeholder {
-    opacity: 1;
+    opacity: 0.7;
   }
   &::-moz-placeholder {
-    opacity: 1;
+    opacity: 0.7;
   }
   &:-ms-input-placeholder {
-    opacity: 1;
+    opacity: 0.7;
   }
   &:-moz-placeholder {
-    opacity: 1;
+    opacity: 0.7;
   }
   &::placeholder {
-    opacity: 1;
+    opacity: 0.7;
   }
 }
 
@@ -92,10 +95,17 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 .hero-footer-link {
   color: #4a4a4a;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  &:hover {
+    color: #4a4a4a;
+  }
 }
 
 .hero-logo {
@@ -113,3 +123,16 @@
     left: -5px;
   }
 }
+.hero-photo.is-opaque {
+  .opacity-layer {
+    opacity: 1;
+  }
+  background-color: #afafaf;
+  .pre-hover {
+    display: none;
+  }
+  .post-hover {
+    display: block;
+  }
+}
+
