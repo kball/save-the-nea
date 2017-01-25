@@ -61,7 +61,11 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+
+$sta-dark-gray: #4a4a4a;
+$sta-light-gray: #ececec;
+
+$body-background: $sta-dark-gray;
 $body-font-color: $black;
 $body-font-family: 'Nunito', sans-serif;
 $body-antialiased: true;
@@ -612,8 +616,8 @@ $tooltip-radius: $global-radius;
 // 37. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-padding: 1.5rem;
+$topbar-background: $sta-dark-gray;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
