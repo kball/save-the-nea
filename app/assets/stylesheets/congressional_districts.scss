@@ -1,3 +1,90 @@
-// Place all the styles related to the congressional_districts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.zipcode-form-container-interior {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background: #555555;
+  padding: 2rem 0;
+}
+.pre-hover, .post-hover {
+  color: #fff;
+  text-align: center;
+}
+
+
+.zipcode-search {
+  padding: 30px 30px 30px 50px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  max-width: 400px;
+  width: 90%;
+  
+  background-image: image-url('index/search.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+
+
+  &::-webkit-input-placeholder {
+    opacity: 0;
+  }
+  &::-moz-placeholder {
+    opacity: 0;
+  }
+  &:-ms-input-placeholder {
+    opacity: 0;
+  }
+  &:-moz-placeholder {
+    opacity: 0;
+  }
+  &::placeholder {
+    opacity: 0;
+  }
+}
+
+.top-bar-logo {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 48px;
+  z-index: 2;
+  line-height: 1.1;
+  position: relative;
+  .the-arts {
+    display: block;
+    font-size: 24px;
+    position: relative;
+    left: -5px;
+  } 
+  &:hover {
+	  color: #fff;
+  }
+}
+
+h1.cd {
+	color: #fff;
+}
+
+.grant {
+	background: #fff;
+	padding: 1.5rem;
+	margin-top: 1rem;
+	h3 {
+		border-bottom: 1px solid #c1c1c1;
+	}
+	span {
+		font-weight: bold;
+	}
+}
+
+#search-footer {
+	margin: 2rem 0;
+	h3 {
+		color: #fff;
+	}
+	p {
+		color: #fff;
+	}
+	.footer-links, .footer-links a {
+		color: #d8d8d8
+	}
+}

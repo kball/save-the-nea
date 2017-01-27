@@ -1,21 +1,28 @@
 <div class="top-bar">
-  <div class="top-bar-left">
-    <a href="/">#SaveTheArts</a>
-  </div>
-  <div class="top-bar-right">
-    <form action="/zip" method="GET">
-      <ul class="menu">
-        <li><input type="search" name="code" value="<%= params[:zipcode] %>" placeholder="Zipcode"></li>
-        <li><button type="button" class="button">Find Zipcode</button></li>
-      </ul>
-    </form>
+  <div class="row columns">
+	  <div class="top-bar-left">
+	    <a class="top-bar-logo" href="/">Save<span class="the-arts">The Arts</span></a>
+	  </div>
   </div>
 </div>
-<div class="row columns">
-  <h1><%= @state.name %> CD <%= "%2d" % @congressional_district.number %></h1>
+
+<div class="zipcode-form-container-interior">
+    <form action="/zip" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <input placeholder="Type your ZIP code" class="zipcode-search" type="text" name="code[]" id="code_">
+	</form>  
 </div>
+
 <div class="row">
-  <div class="columns medium-8">
+  <div class="columns medium-9 medium-centered">
+	<!--<h1 class="cd"><%= @state.name %> CD <%= "%2d" % @congressional_district.number %></h1> -->
     <%= render @grants %>
   </div>
+</div>
+
+<div class="row" id="search-footer">
+	<div class="columns medium-9 medium-centered text-center">
+		<h3>Imagine a World Without Art...</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec diam odio. Sed hendrerit, sapien sit amet elementum congue, urna elit rutrum elit, non posuere est enim ac dolor. Donec in massa a mauris vehicula finibus. Curabitur scelerisque vel ex laoreet egestas. </p>
+		<div class="footer-links"><a href="#">About</a> • <a href="#">FAQ</a> </div>
+	</div>
 </div>
